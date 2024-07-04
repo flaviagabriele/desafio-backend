@@ -12,18 +12,20 @@
 
 <script>
       function validar() {
-       cont=11;
+       cont=1;
        var media = 0;
-       let nome = window.prompt('Qual é o seu nome?')
+       let nome = window.prompt('Qual e o seu nome?')
 
        while (cont <=4) {
-       var notas = parseFloat(prompt("Qual a nota $(cont)?")) 
+       var notas = parseFloat(prompt(`Qual a nota ${cont}?`)) 
        media=media+notas;
-       cont ++
+       cont ++  
+       } 
+      window.alert(`Ola a media do aluno e, ${media/4}!`)
 
-} window.alert("Olá, 5(media/4)1")
+} 
 
-} </script>
+</script>
 
 </body>
 
