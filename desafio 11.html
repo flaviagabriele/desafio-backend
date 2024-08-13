@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhaskara</title>
+</head>
+<body>
+    <h1>Calculando com Bhaskara!</h1>
+    <button onclick="bhaskara()">Calculando</button>
+    <section id="situacao">
+    <p>O resultado vai aparecer aqui...</p>
+    </section>
+</body>
+</html>
+</head>
+<body>
+    <script>
+        function bhaskara() {
+            let a = Number(window.prompt(`Qual o valor de a?` ))
+            let b = Number(window.prompt(`Qual o valor de b?`))
+            let c = Number(window.prompt(`Qual o valor de c?`))
+
+            delta = b*b-4*a*c
+            raizpositiva = -b+Math.sqrt(delta)/2*a
+            raiznegativa = -b-Math.sqrt(delta)/2*a
+
+            let res = document.getElementById('situacao')
+            res.innerHTML = `<p>O valor de delta é ${delta}</p>`
+            res.innerHTML += `<p>O valor da raiz positiva é ${raizpositiva}</p>`
+            res.innerHTML += `<p>O valor da raiz negativa é ${raiznegativa}</p>`
+        }
+    </script>
+</body>
+</html>
