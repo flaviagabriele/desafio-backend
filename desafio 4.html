@@ -7,17 +7,16 @@
 </head>
 <body>
     <h1>Média do aluno v1.0</h1>
-    <button onclick="media()">Calcular media</button>
+    <button onclick="media()">Calcular média</button>
     <section id="situacao">
     <p>O resultado vai aparecer aqui...</p>
     </section>
-</body>
-</html>
 </head>
+    
 <body>
     <script>
         function media() {
-            let nom = window-prompt ('Qual é o nome do aluno?')
+            let nom = window.prompt ('Qual é o nome do aluno?')
             // Já que o nome não é um número e sim letras, não é preciso colocar Number() para fazer a conversão
             let nota1 = Number(window.prompt(`Qual foi a primeira nota de ${nom}?` ))
             let nota2 = Number(window.prompt(`Qual foi a segunda nota de $(nom)?`))
@@ -31,6 +30,9 @@
             res.innerHTML = `<p>Calculando a média final de <mark>${nom}</mark>.</p>`
             res.innerHTML +=`<p> A média final será <mark>${med}</mark>.</p>`
         }
+    </script>
+        </body>
+    </html>
 </script>
 
 </body>
