@@ -17,18 +17,18 @@
 <body>
     <script>
         function bhaskara() {
-            let a = Number(window.prompt(`Qual o valor de a?` ))
-            let b = Number(window.prompt(`Qual o valor de b?`))
-            let c = Number(window.prompt(`Qual o valor de c?`))
+            let a = Number(window.prompt(`Qual o valor de a?' ))
+            let b = Number(window.prompt('Qual o valor de b?'))
+            let c = Number(window.prompt('Qual o valor de c?'))
 
             delta = b*b-4*a*c
             raizpositiva = -b+Math.sqrt(delta)/2*a
             raiznegativa = -b-Math.sqrt(delta)/2*a
 
             let res = document.getElementById('situacao')
-            res.innerHTML = `<p>O valor de delta é ${delta}</p>`
-            res.innerHTML += `<p>O valor da raiz positiva é ${raizpositiva}</p>`
-            res.innerHTML += `<p>O valor da raiz negativa é ${raiznegativa}</p>`
+            res.innerHTML = '<p>O valor de delta é ${delta}</p>'
+            res.innerHTML += '<p>O valor da raiz positiva é ${raizpositiva}</p>'
+            res.innerHTML += '<p>O valor da raiz negativa é ${raiznegativa}</p>'
         }
     </script>
 </body>
