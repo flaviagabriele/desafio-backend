@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html>
 <head>
-    <title>Aula Back-Ende 3º Ало Polo Arapongas</title>
+    <title>Aula Back-Ende 3º Аnо Polo Arapongas</title>
 </head>
 <body>
      <h1>Calcule a Média do Aluno:</h1>
@@ -16,26 +16,24 @@
          let nome = window.prompt('Qual é o seu nome?')
 
          while (cont <= 4) {
-              var notas = parseFloat(prompt('Qual a nota ${cont}?'))
+              var notas = parseFloat(prompt(`Qual a nota ${cont}?`))
               media=media+notas; 
               cont ++
             }
             media=media/4
 
             if (media >=60) {
-                result = "Aprovado  :)"
+                result = "Aprovado"
             } else { 
             if (media >=30) {
-                result = "Recuperação  :("
+                result = "Recuperação"
             } else { 
-                result = "Reprovado  :("
+                result = "Reprovado"
             }
-           
+            }
             let res = document.getElementById('situacao')
-            res.innerHTML = `<p>O aluno(a) ${nome}, está com média ${media} e está ${result}</p>`
-           
+            res.innerHTML = `<p>O aluno(a) ${nome}, está com média ${media} e está ${result}!</p>`   
         }
-    }
     </script>
 </body>
 <footer>
