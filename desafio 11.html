@@ -21,9 +21,9 @@
             let b = Number(window.prompt('Qual o valor de b?'))
             let c = Number(window.prompt('Qual o valor de c?'))
 
-            delta = (b*b)-(4*a*c)
-            raizpositiva = (-b+Math.sqrt(delta))/2*a
-            raiznegativa = (-b-Math.sqrt(delta))/2*a
+            delta = ((b*b)-(4*a*c))
+            raizpositiva = ((-b+Math.sqrt(delta))/2*a)
+            raiznegativa = ((-b-Math.sqrt(delta))/2*a)
 
             let res = document.getElementById('situacao')
             res.innerHTML = `<p>O valor de delta é ${delta}</p>`
