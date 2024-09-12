@@ -1,38 +1,26 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Cadastro</title>
 </head>
 <body>
-    <!-- Aqui nesse pedaço criaremos os campos para digitação definindo o rótulo (label) e o conteudo (input) -->
+    <h1>Exemplo e Formulário de Cadastro</h1>
+<form id="cadastroform">
 
-    <h1>Exemplo de Formulário de Cadastro</h1>
+        <label for="nome">Nome :</label> <input id="nome" type="text">
+        <label for="endereço">Endereço:</label> <input id="endereço" type="text">
+        <label for="telefone">Telefone :</label> <input id="telefone" type="fone">
 
-    <form id="cadastroForm">
-
-        <label for="nome">    Nome    :</label> <input type="text" id="nome">    <br>
-        <label for="endereco">Endereço:</label> <input type="text" id="endereco"><br>
-        <label for="telefone">Telefone:</label> <input type="fone" id="telefone"><br>
-       
-        <button type="submit">Cadastrar</button>
-
-    </form>
-
-    <p id="mensagem"></p>
-
+      <button type="submit">Cadastrar</button>
+</form>
+      <p id="mensagem"></p>
     <script>
-      const formulario = document.getElementById('cadastroForm');
-     
-      // formulario.addEventListener('submit',(event) => {event.preventDefault();
-        const nome     = document.getElementById('nome').value;
-        const endereco = document.getElementById('endereco').value;
+        const formulario = document.getElementById('cadastroform');
+        const nome = document.getElementById('nome').value;
+        const endereço = document.getElementById('endereço').value;
         const telefone = document.getElementById('telefone').value;
         const mensagem = document.getElementById('mensagem');
-
-        mensagem.textContent = `Cadastro realizado com sucesso! Nome: ${nome}, Endereço: ${endereco}, Telefone: ${telefone}`;
-
-        // });
     </script>
-
-  </body>
+</body>
 </html>
