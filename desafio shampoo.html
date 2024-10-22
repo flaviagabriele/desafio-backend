@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel de Fotos</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #8cd43f, #ff7f50, #000);
+        }
+        .carousel {
+            width: 600px; /* Aumentei a largura */
+            height: 400px; /* Aumentei a altura */
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .image {
+            min-width: 100%;
+            height: 100%; /* Ajuste para ocupar o espaço total */
+            display: none;
+        }
+        .image.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="carousel" onclick="nextImage()">
+    <img src="foto1.jpg" class="image active" id="image1">
+    <img src="foto2.jpg" class="image" id="image2">
+</div>
+
+<script>
+    let currentImage = 0;
+
+    function nextImage() {
+        const images = document.querySelectorAll('.image');
+        images[currentImage].classList.remove('active');
+        currentImage = (currentImage + 1) % images.length;
+        images[currentImage].classList.add('active');
+    }
+</script>
+
+</body>
+</html>
