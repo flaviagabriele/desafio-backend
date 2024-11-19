@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folha de Pagamento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a0dad, #ffffff); /* Gradiente roxo e branco */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        header img {
+            width: 150px; /* Tamanho da logo */
+        }
+        h1 {
+            color: #6a0dad;
+        }
+        .form-container {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #6a0dad;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #5a0b9f;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #6a0dad;
+            color: white;
+        }
+        .result-row td {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <img src="sua-logo.png" alt="Logo"> <!-- Coloque o caminho da sua logo aqui -->
+        <h1>Folha de Pagamento</h1>
+    </header>
+
+    <div class="form-container">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" placeholder="Digite o nome da pessoa">
+        
+        <label for="salario">Salário Bruto (R$):</label>
+        <input type="number" id="salario" placeholder="Digite o salário bruto" min="0">
+        
+        <button onclick="adicionarPessoa()">Adicionar Pessoa</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Salário Bruto</th>
+                <th>Imposto de Renda</th>
+                <th>Salário Líquido</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-pessoas">
+            <!-- As linhas de pessoas serão adicionadas aqui -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function calcularImposto(salario) {
+        let imposto = 0;
+        if (salario > 5000) {
+            imposto = salario * 0.175;
+        } else if (salario > 4000) {
+            imposto = salario * 0.12;
+        } else if (salario > 3000) {
+            imposto = salario * 0.075;
+        } else if (salario > 1800) {
+            imposto = salario * 0.035;
+        }
+        return imposto;
+    }
+
+    function adicionarPessoa() {
+        const nome = document.getElementById('nome').value;
+        const salarioBruto = parseFloat(document.getElementById('salario').value);
+
+        if (nome && !isNaN(salarioBruto) && salarioBruto >= 0) {
+            const imposto = calcularImposto(salarioBruto);
+            const salarioLiquido = salarioBruto - imposto;
+
+            const tabela = document.getElementById('tabela-pessoas');
+            const novaLinha = document.createElement('tr');
+
+            novaLinha.classList.add('result-row');
+            novaLinha.innerHTML = `
+                <td>${nome}</td>
+                <td>R$ ${salarioBruto.toFixed(2)}</td>
+                <td>R$ ${imposto.toFixed(2)}</td>
+                <td>R$ ${salarioLiquido.toFixed(2)}</td>
+            `;
+            tabela.appendChild(novaLinha);
+
+            // Limpar os campos
+            document.getElementById('nome').value = '';
+            document.getElementById('salario').value = '';
+        } else {
+            alert("Por favor, preencha os campos corretamente.");
+        }
+    }
+</script>
+
+</body>
+</html>
